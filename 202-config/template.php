@@ -51,7 +51,11 @@
 	
 	<table class="header" cellspacing="0" cellpadding="0">
 		<tr>
-			<td class="shrink-width"><iframe class="advertise-top-left" src="http://prosper.tracking202.com/ads/prosper202/top-left/" scrolling="no" frameborder="0"></iframe></td>
+			<td class="shrink-width">
+			  <a href="/">
+			    <img src="/202-img/prosper202.png">
+			  </a>
+			</td>
 			<td>
 				
 				<div class="skyline">

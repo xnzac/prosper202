@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	//check username
 	if ($_POST['user_name']==''){    $error['user_name'] = '<div class="error">You must type in your desired username</div>';    }
 	if (!ctype_alnum($_POST['user_name'])) {    $error['user_name'] .= '<div class="error">Your username may only contain alphanumeric characters</div>';  }    
-	if ((strlen($_POST['user_name']) < 4) OR (strlen($_POST['user_name']) > 20)) { $error['user_name'] .= '<div class="error">Your username must be between 4 and 20 characters long</div>';}
+	if ((strlen($_POST['user_name']) < 3) OR (strlen($_POST['user_name']) > 20)) { $error['user_name'] .= '<div class="error">Your username must be between 3 and 20 characters long</div>';}
 	
 	//check password
 	if ($_POST['user_pass']=='') { $error['user_pass'] = '<div class="error">You must type in your desired password</div>'; }

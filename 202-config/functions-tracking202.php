@@ -146,8 +146,13 @@ function record_mysql_error($sql)
 }
 
 
-
+// Now outputs the $currency_symbol set in config, if exists
 function dollar_format($amount, $cpv = false) {
+  global $currency_symbol;
+
+  if(!$currency_symbol)
+     $currency_symbol = "\$";
+  
 	if ($cpv == true) {
 		$decimals = 5;
 	} else {
@@ -155,9 +160,9 @@ function dollar_format($amount, $cpv = false) {
 	}
 	
 	if ($amount >= 0) {
-		$new_amount = "\$".sprintf("%.".$decimals."f",$amount);
+		$new_amount = $currency_symbol . sprintf("%.".$decimals."f",$amount);
 	} else { 
-		$new_amount = "\$".sprintf("%.".$decimals."f",substr($amount,1,strlen($amount)));
+		$new_amount = $currency_symbol . sprintf("%.".$decimals."f",substr($amount,1,strlen($amount)));
 		$new_amount = '('.$new_amount.')';    
 	}
 	

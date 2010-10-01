@@ -8,3 +8,8 @@ $refreshtime = "2";
 $tab_page = "2a";
 
 Read template.php for a list of tabs codes.
+
+Set Currency Symbol
+====================
+
+You can now set the currency symbol used in reports and a couple of other places. See 202-config-sample.php.

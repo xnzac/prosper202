@@ -31,8 +31,8 @@ if ( !file_exists( $_SERVER['DOCUMENT_ROOT'] . '/202-config.php') ) {
 			header('location: /202-config/upgrade.php');
 			
 		} else {
-	
-			header('location: /202-login.php');
+			header('location: /tracking202/overview/');
+      // header('location: /202-login.php');
 		
 		}
 	}

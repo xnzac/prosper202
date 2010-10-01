@@ -45,6 +45,88 @@ case "202-account":
 	break;
 } ?>
 
+<? // MODIFICATION Start: "Meta Refresh to Tracking202 Page"
+
+if (($navigation[1] == '202-account') and (($navigation[2] != 'account.php') and ($navigation[2] != 'administration.php')) ) {
+
+// Set $refreshtime to the # of seconds to wait until redirecting
+//
+// Set $tab_page to the page to be redirected to: (Default is 2-Overview page)
+//   1-"Setup" page
+//
+//   2a-"Overview >> Campaign Overview" page
+//   2b-"Overview >> Daily Overview" page
+//   2c-"Overview >> Hourly Overview" page
+//
+//   3a-"Analyze >> Keywords" page
+//   3b-"Analyze >> Text Ads" page
+//   3c-"Analyze >> Referers" page
+//   3d-"Analyze >> IPs" page
+//   3e-"Analyze >> Landing Pages" page
+//   *3f-"Analyze >> Keywords LP CTR" page
+//   *3g-"Analyze >> Text Ads LP CTR" page
+//
+//   4-"Visitors" page
+//   5-"Spy" page
+//   6-"Update" page
+//
+// *NOTE: 3f, 3g are used if you installed the LP CTR script.
+
+
+$refreshtime = "0";
+$tab_page = "2a";
+
+switch ($tab_page) {
+    case "1":
+        $tab_page_url = "/tracking202/setup";
+        break;
+    case "2a":
+        $tab_page_url = "/tracking202/overview";
+        break;
+    case "2b":
+        $tab_page_url = "/tracking202/overview/daily.php";
+        break;
+    case "2c":
+        $tab_page_url = "/tracking202/overview/hourly.php";
+        break;
+    case "3a":
+        $tab_page_url = "/tracking202/analyze/keywords.php";
+        break;
+    case "3b":
+        $tab_page_url = "/tracking202/analyze/text_ads.php";
+        break;
+    case "3c":
+        $tab_page_url = "/tracking202/analyze/referers.php";
+        break;
+    case "3d":
+        $tab_page_url = "/tracking202/analyze/ips.php";
+        break;
+    case "3e":
+        $tab_page_url = "/tracking202/analyze/landing_pages.php";
+        break;
+    case "3f":
+        $tab_page_url = "/tracking202/analyze/keywords_lpctr.php";
+        break;
+    case "3g":
+        $tab_page_url = "/tracking202/analyze/text_ads_lpctr.php";
+        break;
+    case "4":
+        $tab_page_url = "/tracking202/visitors";
+        break;
+    case "5":
+        $tab_page_url = "/tracking202/spy";
+        break;
+    case "6":
+        $tab_page_url = "/tracking202/update";
+        break;
+    default:
+    	$tab_page_url = "/tracking202/";
+}
+
+?>
+<meta http-equiv="refresh" content="<?php echo $refreshtime;?>;url=<?php echo $tab_page_url;?>" />
+<? } // MODIFICATION End: "Meta Refresh to Tracking202 Page" ?>
+
 
 </head>
 <body>

@@ -1,0 +1,10 @@
+Redirect To Any Tab
+===================
+See original blog post http://nerdyaffiliate.com/affiliate-marketing/prosper202-modification-redirect-to-any-tab
+
+Edit 202-config/template.php to change redirect time and tab to redirect to:
+
+$refreshtime = "2";
+$tab_page = "2a";
+
+Read template.php for a list of tabs codes.

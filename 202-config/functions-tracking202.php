@@ -145,13 +145,24 @@ function record_mysql_error($sql)
 		<? template_bottom($server_row);  die();
 }
 
-
-// Now outputs the $currency_symbol set in config, if exists
-function dollar_format($amount, $cpv = false) {
+function get_currency_symbol() {
   global $currency_symbol;
 
   if(!$currency_symbol)
      $currency_symbol = "\$";
+     
+  return $currency_symbol;
+}
+
+function get_encoded_currency_symbol() {
+  return htmlentities(get_currency_symbol(), ENT_QUOTES, 'UTF-8');  
+}
+
+
+
+// Now outputs the $currency_symbol set in config, if exists
+function dollar_format($amount, $cpv = false) {
+  $currency_symbol = get_currency_symbol();
   
 	if ($cpv == true) {
 		$decimals = 5;

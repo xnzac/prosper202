@@ -264,7 +264,7 @@ template_top('Affiliate Campaigns Setup',NULL,NULL,NULL); ?>
 					</tr>
 	
 					<tr>
-						<td class="left_caption">Payout $ </td>
+						<td class="left_caption">Payout <? echo get_encoded_currency_symbol(); ?> </td>
 						<td>
 							<input type="text" name="aff_campaign_payout" size="4" value="<? echo $html['aff_campaign_payout']; ?>" style="display: inline;"/>
 						</td>
@@ -329,7 +329,7 @@ template_top('Affiliate Campaigns Setup',NULL,NULL,NULL); ?>
 							$html['aff_campaign_url'] = htmlentities($aff_campaign_row['aff_campaign_url'], ENT_QUOTES, 'UTF-8');
 							$html['aff_campaign_id'] = htmlentities($aff_campaign_row['aff_campaign_id'], ENT_QUOTES, 'UTF-8');
 
-							printf('<li>%s &middot; &#36;%s - <a href="%s" target="_new" style="font-size: 9px;">link</a> - <a href="?edit_aff_campaign_id=%s" style="font-size: 9px;">edit</a> - <a href="?delete_aff_campaign_id=%s" style="font-size: 9px;">remove</a></li>', $html['aff_campaign_name'], $html['aff_campaign_payout'], $html['aff_campaign_url'], $html['aff_campaign_id'], $html['aff_campaign_id']);
+							printf('<li>%s &middot; '.get_encoded_currency_symbol().'%s - <a href="%s" target="_new" style="font-size: 9px;">link</a> - <a href="?edit_aff_campaign_id=%s" style="font-size: 9px;">edit</a> - <a href="?delete_aff_campaign_id=%s" style="font-size: 9px;">remove</a></li>', $html['aff_campaign_name'], $html['aff_campaign_payout'], $html['aff_campaign_url'], $html['aff_campaign_id'], $html['aff_campaign_id']);
 						
 						} 
 					

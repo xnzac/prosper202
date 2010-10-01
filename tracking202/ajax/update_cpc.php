@@ -142,7 +142,7 @@ AUTH::require_user();
 		$error['cpc'] = '<div class="error">You did not input a numeric max CPC.</div>'; 
 	} else {
 		$click_cpc = $_POST['cpc_dollars'] . '.' . $_POST['cpc_cents'];
-		$html['click_cpc'] = htmlentities('$'.$click_cpc, ENT_QUOTES, 'UTF-8');
+		$html['click_cpc'] = htmlentities(get_currency_symbol().$click_cpc, ENT_QUOTES, 'UTF-8');
 		$mysql['click_cpc'] = mysql_real_escape_string($click_cpc);
 	}
 	

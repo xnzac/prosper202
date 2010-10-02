@@ -76,8 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['user_stats202_app_key'] = $user_row['user_stats202_app_key'];
 		$_SESSION['user_timezone'] = $user_row['user_timezone']; 
 		
-		//redirect to account scree
-		header('location: /202-account');
+		//redirect to account screen
+    // header('location: /202-account');
+    header('location: /tracking202/overview/');
 	}
 		
 	$html['user_name'] = htmlentities($_POST['user_name'], ENT_QUOTES, 'UTF-8');

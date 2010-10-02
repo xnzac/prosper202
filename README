@@ -13,3 +13,22 @@ Set Currency Symbol
 ====================
 
 You can now set the currency symbol used in reports and a couple of other places. See 202-config-sample.php.
+
+Deep Linking
+============
+
+If your affiliate link allows your to specify a custom deep link then you'll find this feature very useful.
+
+If your affiliate link looks like:
+
+http://merchant.com/?&aff=xx&some-deep-link-param=[[deeplink]]
+
+'some-deep-link-param' might be 'p', 'url' or something else.
+
+Setup your campaign with the [[deeplink]] placeholder.
+
+You can then generate destination URLs in '#7 Get Links' with a deep link of your choosing.
+
+e.g. http://proper202site.com/tracking202/redirect/dl.php?t202id=xx&t202kw=&deeplink=[add your deep link here]
+
+You can also just append the deep links on programmatically or within a spreadsheet. Happy Days!

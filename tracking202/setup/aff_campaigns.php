@@ -237,12 +237,12 @@ template_top('Affiliate Campaigns Setup',NULL,NULL,NULL); ?>
 						</td>
 					</tr>
 					<tr>
-						<td class="left_caption" style="vertical-align:top">Affiliate URL <a class="onclick_color" onclick="alert('This your affiliate link for the campaign. If you do not know how to track subids or what a subid is, ask your affiliate manager before moving forward. If you do not set up subids properly, your campaigns will not track!');"> [?] </a></td>
+						<td class="left_caption" style="vertical-align:top">Affiliate URL <a class="onclick_color" onclick="alert('This your affiliate link for the campaign. If you do not know how to track subids or what a subid is, ask your affiliate manager before moving forward. If you do not set up subids properly, your campaigns will not track!\n\n [[deeplink]] will be replaced with the deeplink param');"> [?] </a></td>
 						<td style="white-space: nowrap;">
-							<input type="text" name="aff_campaign_url" value="<? echo $html['aff_campaign_url']; ?>" style="width: 200px; display: inline;"/>
+							<input type="text" name="aff_campaign_url" value="<? echo $html['aff_campaign_url']; ?>" style="width: 500px; display: inline;"/>
 							<div>
 								The following tracking placeholders can be used:<br/>
-								[[subid]], [[c1]], [[c2]], [[c3]], [[c4]]
+								[[subid]], [[deeplink]], [[c1]], [[c2]], [[c3]], [[c4]]
 							</div>
 						</td>
 					</tr>

@@ -3479,7 +3479,7 @@ function delay_sql($delayed_sql) {
 
 
 
-function rotateTrackerUrl($tracker_row) { 
+function rotateTrackerUrl($tracker_row, $deeplink = nil) { 
 	
 	if (!$tracker_row['aff_campaign_rotate']) return $tracker_row['aff_campaign_url'];
 	
@@ -3521,7 +3521,7 @@ function rotateTrackerUrl($tracker_row) {
 	return $url;
 }
 
-function replaceTrackerPlaceholders($url,$click_id) {
+function replaceTrackerPlaceholders($url, $click_id, $deep_link) {
 	//get the tracker placeholder values
 	$mysql['click_id'] = mysql_real_escape_string($click_id);
 	
@@ -3553,6 +3553,10 @@ function replaceTrackerPlaceholders($url,$click_id) {
 	}
 	
 	$url = preg_replace('/\[\[subid\]\]/', $mysql['click_id'], $url);
+	
+	if(preg_match('/\[\[deeplink\]\]/', $url)) {
+		$url = preg_replace('/\[\[deeplink\]\]/', $deep_link, $url);
+	}
 	
 	return $url;
 }

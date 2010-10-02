@@ -94,7 +94,7 @@ template_top($server_row,'Get Trackers',NULL,NULL,NULL);  ?>
 			</tr>
 			<tr>
 				<td class="left_caption">Max CPC</td>
-				<td valign="center"> $ <input type="text" name="cpc_dollars" maxlength="2" value="0" style="width: 15px; text-align: right;"/>.<input type="text" name="cpc_cents" maxlength="5" value="00" style="width: 40px; text-align: left;"/> <span style="font-size: 11px; padding-left: 10px;">you can now enter cpc amounts as small as 0.00001</span>
+				<td valign="center"> <?php echo get_encoded_currency_symbol(); ?> <input type="text" name="cpc_dollars" maxlength="2" value="0" style="width: 15px; text-align: right;"/>.<input type="text" name="cpc_cents" maxlength="5" value="00" style="width: 40px; text-align: left;"/> <span style="font-size: 11px; padding-left: 10px;">you can now enter cpc amounts as small as 0.00001</span>
 				</td>
 			</tr>
 			<tr>

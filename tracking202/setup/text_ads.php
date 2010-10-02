@@ -374,7 +374,7 @@ template_top('Text Ads Setup',NULL,NULL,NULL);  ?>
 							$html['aff_campaign_name'] = htmlentities($aff_campaign_row['aff_campaign_name'], ENT_QUOTES, 'UTF-8');
 							$html['aff_campaign_payout'] = htmlentities($aff_campaign_row['aff_campaign_payout'], ENT_QUOTES, 'UTF-8');
 						
-							printf('<li>%s &middot; &#36;%s</li>', $html['aff_campaign_name'], $html['aff_campaign_payout']);
+							printf('<li>%s &middot; '.get_encoded_currency_symbol().'%s</li>', $html['aff_campaign_name'], $html['aff_campaign_payout']);
 						
 							?><ul style="margin-top: 0px;"><? 
 							

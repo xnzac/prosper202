@@ -33,8 +33,8 @@ $mysql['aff_network_id'] = mysql_real_escape_string($_POST['aff_network_id']);
                 } else {
                     $selected = '';  
                 }
-				
-                printf('<option %s value="%s">%s &middot; &#36;%s</option>', $selected, $html['aff_campaign_id'], $html['aff_campaign_name'],$html['aff_campaign_payout']);  
+		
+                printf('<option %s value="%s">%s &middot; '.get_encoded_currency_symbol().'%s</option>', $selected, $html['aff_campaign_id'], $html['aff_campaign_name'],$html['aff_campaign_payout']);  
     
 			} ?>
         </select> 

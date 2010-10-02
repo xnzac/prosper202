@@ -316,10 +316,10 @@ if ($cloaking_on == true) {
 // pass deeplink variable which will be added to redirect site url
 $redirect_site_url = rotateTrackerUrl($tracker_row);
 
+$redirect_site_url = replaceTrackerPlaceholders($redirect_site_url, $click_id, $_GET['deeplink']);
+
 // set to deeplink if exists, this url will be recorded as the redirect url in the database
 $destination_redirect_site_url = $_GET['deeplink'] ? $_GET['deeplink'] : $redirect_site_url;
-
-$redirect_site_url = replaceTrackerPlaceholders($redirect_site_url, $click_id, $_GET['deeplink']);
 
 $click_redirect_site_url_id = INDEXES::get_site_url_id($destination_redirect_site_url); 
 $mysql['click_redirect_site_url_id'] = mysql_real_escape_string($click_redirect_site_url_id);
@@ -379,9 +379,8 @@ setClickIdCookie($mysql['click_id'],$mysql['aff_campaign_id']);
 if ($cloaking_on == true) {
 	//if cloaked, redirect them to the cloaked site. 
   header('location: '.$cloaking_site_url);    
-  // echo('location: '.$cloaking_site_url);
 } else {
+  // echo ('location: '.$redirect_site_url); 
   header('location: '.$redirect_site_url);
-  // echo ('location: '.$redirect_site_url);  
 } 
 

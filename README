@@ -27,7 +27,7 @@ http://merchant.com/?&aff=xx&some-deep-link-param=[[deeplink]]
 
 Setup your campaign with the [[deeplink]] placeholder.
 
-You can then generate destination URLs in '#7 Get Links' with a deep link of your choosing.
+You can then generate direct links in '#7 Get Links' with a deep link of your choosing.
 
 e.g. http://proper202site.com/tracking202/redirect/dl.php?t202id=xx&t202kw=&deeplink=[add your deep link here]
 

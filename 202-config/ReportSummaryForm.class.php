@@ -16,8 +16,33 @@ class ReportSummaryForm extends ReportBasicForm {
 	// +-----------------------------------------------------------------------+
 	const DEBUG = MO_DEBUG;
 
-	private static $DISPLAY_LEVEL_ARRAY = array(ReportBasicForm::DISPLAY_LEVEL_TITLE,ReportBasicForm::DISPLAY_LEVEL_CLICK_COUNT,ReportBasicForm::DISPLAY_LEVEL_LEAD_COUNT,ReportBasicForm::DISPLAY_LEVEL_SU,ReportBasicForm::DISPLAY_LEVEL_PAYOUT,ReportBasicForm::DISPLAY_LEVEL_EPC,ReportBasicForm::DISPLAY_LEVEL_CPC,ReportBasicForm::DISPLAY_LEVEL_INCOME,ReportBasicForm::DISPLAY_LEVEL_COST,ReportBasicForm::DISPLAY_LEVEL_NET,ReportBasicForm::DISPLAY_LEVEL_ROI);
-	private static $DETAIL_LEVEL_ARRAY = array(ReportBasicForm::DETAIL_LEVEL_PPC_NETWORK,ReportBasicForm::DETAIL_LEVEL_PPC_ACCOUNT,ReportBasicForm::DETAIL_LEVEL_AFFILIATE_NETWORK,ReportBasicForm::DETAIL_LEVEL_CAMPAIGN,ReportBasicForm::DETAIL_LEVEL_LANDING_PAGE,ReportBasicForm::DETAIL_LEVEL_KEYWORD,ReportBasicForm::DETAIL_LEVEL_TEXT_AD,ReportBasicForm::DETAIL_LEVEL_REFERER,ReportBasicForm::DETAIL_LEVEL_IP,ReportBasicForm::DETAIL_LEVEL_C1,ReportBasicForm::DETAIL_LEVEL_C2,ReportBasicForm::DETAIL_LEVEL_C3,ReportBasicForm::DETAIL_LEVEL_C4);
+	private static $DISPLAY_LEVEL_ARRAY = array(ReportBasicForm::DISPLAY_LEVEL_TITLE,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_CLICK_COUNT,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_LEAD_COUNT,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_SU,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_PAYOUT,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_EPC,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_CPC,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_INCOME,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_COST,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_NET,
+                                          	  ReportBasicForm::DISPLAY_LEVEL_ROI);
+	
+	private static $DETAIL_LEVEL_ARRAY = array(ReportBasicForm::DETAIL_LEVEL_PPC_NETWORK,
+                                          	  ReportBasicForm::DETAIL_LEVEL_PPC_ACCOUNT,
+                                          	  ReportBasicForm::DETAIL_LEVEL_AFFILIATE_NETWORK,
+                                          	  ReportBasicForm::DETAIL_LEVEL_CAMPAIGN,
+                                          	  ReportBasicForm::DETAIL_LEVEL_LANDING_PAGE,
+                                          	  ReportBasicForm::DETAIL_LEVEL_KEYWORD,
+                                          	  ReportBasicForm::DETAIL_LEVEL_TEXT_AD,
+                                          	  ReportBasicForm::DETAIL_LEVEL_REFERER,
+                                          	  ReportBasicForm::DETAIL_LEVEL_REDIRECT,
+                                          	  ReportBasicForm::DETAIL_LEVEL_IP,
+                                          	  ReportBasicForm::DETAIL_LEVEL_C1,
+                                          	  ReportBasicForm::DETAIL_LEVEL_C2,
+                                          	  ReportBasicForm::DETAIL_LEVEL_C3,
+                                          	  ReportBasicForm::DETAIL_LEVEL_C4);
+	  
 	private static $SORT_LEVEL_ARRAY = array(ReportBasicForm::SORT_NAME,ReportBasicForm::SORT_CLICK,ReportBasicForm::SORT_LEAD,ReportBasicForm::SORT_SU,ReportBasicForm::SORT_PAYOUT,ReportBasicForm::SORT_EPC,ReportBasicForm::SORT_CPC,ReportBasicForm::SORT_INCOME,ReportBasicForm::SORT_COST,ReportBasicForm::SORT_NET,ReportBasicForm::SORT_ROI);
 	
 	// +-----------------------------------------------------------------------+
@@ -133,7 +158,9 @@ class ReportSummaryForm extends ReportBasicForm {
 		} else if ($arg0 == ReportBasicForm::DETAIL_LEVEL_REFERER) {
 			return "referer_id";
 		} else if ($arg0 == ReportBasicForm::DETAIL_LEVEL_REDIRECT) {
-			return "redirect_id";
+		  # group by name not id
+      // return "redirect_id";
+      return "redirect_name";
 		} else if ($arg0 == ReportBasicForm::DETAIL_LEVEL_IP) {
 			return "ip_id";
 		} else if ($arg0 == ReportBasicForm::DETAIL_LEVEL_C1) {
@@ -1260,7 +1287,8 @@ class ReportSummaryRedirectForm extends ReportSummaryTotalForm {
 	 * @return integer
 	 */
 	function getId() {
-		return $this->getRedirectId();
+    // return $this->getRedirectId();
+		return $this->getRedirectName();
 	}
 	
 	/**

@@ -50,6 +50,7 @@ AUTH::require_user();
 
 $mysql['user_id'] = mysql_real_escape_string($_SESSION['user_id']);
 
+// echo $summary_form->getQuery($mysql['user_id'],$user_row);
 $info_result = _mysql_query($summary_form->getQuery($mysql['user_id'],$user_row));
 
 while ($row = mysql_fetch_assoc($info_result)) {

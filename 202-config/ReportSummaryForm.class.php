@@ -726,23 +726,23 @@ class ReportSummaryForm extends ReportBasicForm {
 					. round($row->getSu()*100,2) . '%' .
 				"</td>";
 			} else if (ReportBasicForm::DISPLAY_LEVEL_PAYOUT==$display_item_key) {
-				$html_val .= "<td>$"
+				$html_val .= "<td>" . get_encoded_currency_symbol()
 					. number_format($row->getPayout(),2) .
 				"</td>";
 			} else if (ReportBasicForm::DISPLAY_LEVEL_EPC==$display_item_key) {
-				$html_val .= "<td>$"
+				$html_val .= "<td>" . get_encoded_currency_symbol()
 					. number_format($row->getEpc(),2) .
 				"</td>";
 			} else if (ReportBasicForm::DISPLAY_LEVEL_CPC==$display_item_key) {
-				$html_val .= "<td>$"
+				$html_val .= "<td>" . get_encoded_currency_symbol()
 					. number_format($row->getCpc()*100,2) .
 				"</td>";
 			} else if (ReportBasicForm::DISPLAY_LEVEL_INCOME==$display_item_key) {
-				$html_val .= '<td class="m-row4">$'
+				$html_val .= '<td class="m-row4">' . get_encoded_currency_symbol()
 					. number_format($row->getIncome(),2) .
 				"</td>";
 			} else if (ReportBasicForm::DISPLAY_LEVEL_COST==$display_item_key) {
-				$html_val .= '<td class="m-row4">$'
+				$html_val .= '<td class="m-row4">' . get_encoded_currency_symbol()
 					. number_format($row->getCost(),2) .
 				"</td>";
 			} else if (ReportBasicForm::DISPLAY_LEVEL_NET==$display_item_key) {
@@ -753,7 +753,7 @@ class ReportSummaryForm extends ReportBasicForm {
 				} else {
 					$html_val .= '<td class="m-row_zero">';
 				}
-				$html_val .= '$' . number_format($row->getNet(),2) . '</td>';
+				$html_val .= get_encoded_currency_symbol() . number_format($row->getNet(),2) . '</td>';
 			} else if (ReportBasicForm::DISPLAY_LEVEL_ROI==$display_item_key) {
 				if($row->getRoi()<0) {
 					$html_val .= '<td class="m-row_neg">';
@@ -907,17 +907,17 @@ class ReportSummaryForm extends ReportBasicForm {
 			} else if (ReportBasicForm::DISPLAY_LEVEL_SU==$display_item_key) {
 				ReportBasicForm::echoCell(round($row->getSu()*100,2) . '%');
 			} else if (ReportBasicForm::DISPLAY_LEVEL_PAYOUT==$display_item_key) {
-				ReportBasicForm::echoCell('$' . number_format($row->getPayout(),2));
+				ReportBasicForm::echoCell(get_encoded_currency_symbol() . number_format($row->getPayout(),2));
 			} else if (ReportBasicForm::DISPLAY_LEVEL_EPC==$display_item_key) {
-				ReportBasicForm::echoCell('$' . number_format($row->getEpc(),2));
+				ReportBasicForm::echoCell(get_encoded_currency_symbol() . number_format($row->getEpc(),2));
 			} else if (ReportBasicForm::DISPLAY_LEVEL_CPC==$display_item_key) {
-				ReportBasicForm::echoCell("$" . number_format($row->getCpc()*100,2));
+				ReportBasicForm::echoCell(get_encoded_currency_symbol() . number_format($row->getCpc()*100,2));
 			} else if (ReportBasicForm::DISPLAY_LEVEL_INCOME==$display_item_key) {
-				ReportBasicForm::echoCell('$' . number_format($row->getIncome(),2));
+				ReportBasicForm::echoCell(get_encoded_currency_symbol() . number_format($row->getIncome(),2));
 			} else if (ReportBasicForm::DISPLAY_LEVEL_COST==$display_item_key) {
-				ReportBasicForm::echoCell('$' . number_format($row->getCost(),2));
+				ReportBasicForm::echoCell(get_encoded_currency_symbol() . number_format($row->getCost(),2));
 			} else if (ReportBasicForm::DISPLAY_LEVEL_NET==$display_item_key) {
-				ReportBasicForm::echoCell('$' . number_format($row->getNet(),2));
+				ReportBasicForm::echoCell(get_encoded_currency_symbol() . number_format($row->getNet(),2));
 			} else if (ReportBasicForm::DISPLAY_LEVEL_ROI==$display_item_key) {
 				ReportBasicForm::echoCell($row->getRoi());
 			}

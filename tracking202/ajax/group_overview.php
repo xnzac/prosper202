@@ -32,7 +32,8 @@ AUTH::require_user();
 	
 	$summary_form = new ReportSummaryForm();
 	$summary_form->setDetails(array($user_row['user_pref_group_1'],$user_row['user_pref_group_2'],$user_row['user_pref_group_3'],$user_row['user_pref_group_4']));
-	$summary_form->setDetailsSort(array(ReportBasicForm::SORT_NAME));
+  // $summary_form->setDetailsSort(array(ReportBasicForm::SORT_NAME));
+  $summary_form->setDetailsSort(array(ReportBasicForm::SORT_NET));
 	$summary_form->setDisplayType(array(ReportBasicForm::DISPLAY_TYPE_TABLE));
 	$summary_form->setStartTime($mysql['from']);
 	$summary_form->setEndTime($mysql['to']);

@@ -43,7 +43,17 @@ class ReportSummaryForm extends ReportBasicForm {
                                           	  ReportBasicForm::DETAIL_LEVEL_C3,
                                           	  ReportBasicForm::DETAIL_LEVEL_C4);
 	  
-	private static $SORT_LEVEL_ARRAY = array(ReportBasicForm::SORT_NAME,ReportBasicForm::SORT_CLICK,ReportBasicForm::SORT_LEAD,ReportBasicForm::SORT_SU,ReportBasicForm::SORT_PAYOUT,ReportBasicForm::SORT_EPC,ReportBasicForm::SORT_CPC,ReportBasicForm::SORT_INCOME,ReportBasicForm::SORT_COST,ReportBasicForm::SORT_NET,ReportBasicForm::SORT_ROI);
+	private static $SORT_LEVEL_ARRAY = array(ReportBasicForm::SORT_NAME,
+                                        	  ReportBasicForm::SORT_CLICK,
+                                        	  ReportBasicForm::SORT_LEAD,
+                                        	  ReportBasicForm::SORT_SU,
+                                        	  ReportBasicForm::SORT_PAYOUT,
+                                        	  ReportBasicForm::SORT_EPC,
+                                        	  ReportBasicForm::SORT_CPC,
+                                        	  ReportBasicForm::SORT_INCOME,
+                                        	  ReportBasicForm::SORT_COST,
+                                        	  ReportBasicForm::SORT_NET,
+                                        	  ReportBasicForm::SORT_ROI);
 	
 	// +-----------------------------------------------------------------------+
 	// | PRIVATE VARIABLES                                                     |

@@ -15,10 +15,10 @@
 	font-weight: bold;
 }
 .result_report_table th, .result_report_table td {
-	font-size: 7pt;
+/*	font-size: 7pt;*/
 }
 .result_report_table a, .result_report_table a:hover {
-	font-size: 7pt;
+/*	font-size: 7pt;*/
 }
 .result_report_table thead {
 	background-color:#d5dcd0;
@@ -117,12 +117,13 @@
 }
 .result_report_table tbody tr.sub th,
 .result_report_table tbody tr.sub td {
-	font-weight:bold;
-	padding:2px;
+	font-size: 1.3em !important;
+	font-weight: bold;
+	padding: 2px;
 	background-image:none;
 	background-color:#d5dcd0;
-	border-top: 1px dashed #505050;
-	border-bottom: 1px dashed #505050;
+/*	border-top: 1px dashed #505050;*/
+/*	border-bottom: 1px dashed #505050;*/
 }
 .result_report_table tbody tr.sub2 th,
 .result_report_table tbody tr.sub2 td {

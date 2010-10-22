@@ -3521,7 +3521,7 @@ function rotateTrackerUrl($tracker_row, $deeplink = nil) {
 	return $url;
 }
 
-function replaceTrackerPlaceholders($url, $click_id, $deep_link) {
+function replaceTrackerPlaceholders($url, $click_id, $deep_link = nil) {
 	//get the tracker placeholder values
 	$mysql['click_id'] = mysql_real_escape_string($click_id);
 	
